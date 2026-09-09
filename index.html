@@ -1,6 +1,6 @@
 <!--
 ===============================================================================
- SVE 一人回しツール v41 モーション実験版  学習・開発版
+ SVE 一人回しツール v53 スマホ一覧余白調整版  学習・開発版
 ===============================================================================
 
 【このファイルの目的】
@@ -118,7 +118,7 @@ function rc()
 ===============================================================================
 -->
 
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SVE 一人回しツール v41 モーション実験版</title>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>SVE 一人回しツール v53 スマホ一覧余白調整版</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:#fff;color:#222;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:14px}button,input{font:inherit}button{background:#f4f4f4;color:#222;border:1px solid #bbb;border-radius:6px;padding:6px 9px;cursor:pointer}button:hover{background:#e9e9e9}header{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:8px 10px;background:#fafafa;border-bottom:1px solid #ccc;position:sticky;top:0;z-index:20}header h1{font-size:16px;margin:0 12px 0 0}.status{margin-left:auto;color:#666;font-size:12px}.app{display:grid;grid-template-columns:250px minmax(0,1fr) 250px;min-height:calc(100vh - 55px)}aside{padding:8px;background:#fafafa;overflow:auto}.left{border-right:1px solid #ccc}.box{background:#fff;border:1px solid #ccc;border-radius:8px;padding:8px;margin-bottom:8px}.box h2{font-size:13px;margin:0 0 7px}.help{color:#666;font-size:12px;line-height:1.5}.drop{border:2px dashed #bbb;border-radius:7px;padding:13px;text-align:center;color:#666;font-size:12px}.drop.drag{border-color:#4d91e8;background:#f3f8ff}.list{display:flex;flex-wrap:wrap;gap:5px;max-height:210px;overflow:auto}.thumb{width:48px;position:relative;cursor:pointer;border-radius:4px}.thumb img{width:48px;display:block;border-radius:3px}.thumb .n{position:absolute;right:1px;bottom:1px;background:#000c;color:#fff;padding:1px 4px;font-size:10px;border-radius:3px}.thumb.used{filter:brightness(.45)}.thumb:hover{outline:2px solid #8eb9ef}main{min-width:0;display:grid;grid-template-columns:1fr 1fr}.player{min-width:0;padding:8px;display:flex;flex-direction:column;border-right:1px solid #ccc}.player:last-child{border-right:0}.phead{display:flex;gap:5px;align-items:center;margin-bottom:6px;flex-wrap:wrap}.phead h2{font-size:14px;margin:0 4px 0 0}.res{margin-left:auto;display:flex;gap:3px;align-items:center}.res input{width:42px;background:#fff;color:#222;border:1px solid #bbb;border-radius:4px;padding:3px}.counts{display:flex;gap:5px;margin-bottom:5px;flex-wrap:wrap}.count{border:1px solid #ccc;background:#fafafa;border-radius:5px;padding:3px 8px;min-width:56px}.count b{font-size:10px;color:#777;display:block}.count span{font-size:15px}.zone-wrap{display:grid;grid-template-rows:auto auto auto;gap:0;flex:0 0 auto;min-height:0}.zone-wrap>.zone{border-radius:0;margin:0}.zone-wrap>.zone:first-child{border-radius:7px 7px 0 0}.zone-wrap>.zone:last-child{border-radius:0 0 7px 7px}.zone-wrap>.zone+.zone{border-top:0}.zone{border:1px solid #cfcfcf;border-radius:7px;background:#fff;padding:6px;min-height:82px}.zone.drag{border:2px solid #4d91e8;background:#f3f8ff}.zone-title{font-size:11px;color:#666;margin-bottom:4px}.decktoggle{cursor:pointer}.decktoggle:hover{background:#eef5ff}.deckviewer{display:none;border:1px solid #8eb9ef;background:#f8fbff;border-radius:7px;padding:6px;margin-bottom:6px}.deckviewer.show{display:block}.pileviewer{display:none;border:1px solid #bbb;background:#fff;border-radius:7px;padding:6px;margin-bottom:6px}.pileviewer.show{display:block}.deckviewer .cardrow{max-height:290px;overflow:auto}.orderbadge{position:absolute;left:2px;top:2px;z-index:9;background:#fff;color:#222;border:1px solid #aaa;border-radius:10px;padding:1px 5px;font-size:9px}.cardrow{display:flex;gap:6px;overflow:auto;min-height:74px;align-items:flex-start;flex-wrap:wrap}.fieldzone{min-height:160px;max-height:none;border-style:dashed;background:#fcfcfc}.exzone{min-height:92px;max-height:none;overflow:hidden}.exzone .cardrow{min-height:108px;flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden}.card{width:106px;position:relative;flex:0 0 auto;cursor:grab}.visual{position:relative;width:100%;transform-origin:center center;transition:transform .15s ease}.visual.acted{transform:rotate(90deg)}.fieldzone .visual,.exzone .visual{aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;overflow:visible}.fieldzone .visual img.main,.exzone .visual img.main{width:71.6%;height:auto;flex:0 0 auto}.fieldzone .visual.acted,.exzone .visual.acted{transform:rotate(90deg)}.fieldzone .cardrow{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;align-items:start;overflow:visible;min-height:0}.fieldzone .card{width:100%;min-width:0}.fieldzone .card img.main{width:100%;height:auto}.smallcard{width:80px}.card img.main{display:block;width:100%;border-radius:6px;box-shadow:0 1px 5px #0003}.card.selected{outline:3px solid #4d91e8;border-radius:7px}.card.dragging{opacity:.4}.evo{position:absolute;left:21%;top:7%;width:71.6%;z-index:3;border-radius:6px;box-shadow:0 2px 8px #0005}.badge{position:absolute;left:4px;top:4px;background:#a97820;color:#fff;padding:2px 4px;border-radius:4px;font-size:9px;z-index:5}.stats{position:relative;margin-top:4px;display:flex;justify-content:center;align-items:center;gap:4px;font-weight:900;color:#222;text-shadow:none}.stat{position:relative;min-width:32px;text-align:center}.value,.slash{background:#f2f2f2;border:1px solid #bbb;border-radius:4px;padding:2px 5px}.slash{cursor:pointer}.sb{position:absolute;left:50%;transform:translateX(-50%);display:none;padding:0 6px;line-height:16px;height:17px;font-size:10px;z-index:12}.stat:hover .sb{display:block}.up{bottom:100%}.down{top:100%}.modal{position:fixed;inset:0;background:#0008;display:none;align-items:center;justify-content:center;z-index:100}.modal.show{display:flex}.dialog{width:min(900px,94vw);max-height:88vh;overflow:auto;background:#fff;border:1px solid #bbb;border-radius:10px;padding:12px}.choices{display:flex;flex-wrap:wrap;gap:10px}.choice{width:105px;text-align:center;cursor:pointer}.choice img{width:100%;border-radius:5px}.io{display:flex;gap:5px}.io button{flex:1}@media(max-width:1100px){.app{grid-template-columns:210px minmax(0,1fr)}.right{display:none}}@media(max-width:820px){.app{display:block}.left{display:none}main{display:block}.player{border-right:0;border-bottom:1px solid #ccc;min-height:700px}}
 
@@ -483,6 +483,387 @@ main,.app{
   visibility:hidden!important;
 }
 
+
+
+/* ==========================================================================\n   v42 smartphone / touch support\n   --------------------------------------------------------------------------\n   PC版のHTMLを分けず、同じHTMLをレスポンシブ表示する。\n   1000px以下ではP1/P2を上下配置し、操作ボタンを折り返す。\n   画面タッチではHTML5 Drag & Dropが安定しないため、カード下の「移動」\n   ボタンから移動先を選べる代替操作も追加する。\n   ========================================================================== */
+.mobile-move-btn{display:none}
+/* DECK LOGコード読込。PC/スマホ共通で使えるよう1行の入力欄にする。 */
+.decklog-row{display:flex;align-items:center;gap:6px;margin:7px 0;flex-wrap:wrap}
+.decklog-row label{font-weight:600;white-space:nowrap}
+.decklog-code{flex:1 1 110px;min-width:90px;padding:6px 8px;border:1px solid #bbb;border-radius:6px;text-transform:uppercase}
+.decklog-read-btn{white-space:nowrap}
+.decklog-note{font-size:11px;color:#666;line-height:1.4;margin-top:3px}
+.mobile-move-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:12px}
+.mobile-move-grid button{min-height:48px;font-weight:700}
+.mobile-move-card{text-align:center;margin:4px auto 8px}
+.mobile-move-card img{width:105px;max-height:150px;object-fit:contain;border-radius:6px}
+
+@media(max-width:1000px){
+  body{font-size:13px;overflow-x:hidden}
+  header{padding:5px max(5px,env(safe-area-inset-right)) 5px max(5px,env(safe-area-inset-left));gap:4px;align-items:center}
+  header h1{display:none}
+  header button{font-size:12px;padding:5px 7px;min-height:34px;white-space:nowrap}
+  #battleHeaderControls{display:inline-flex;flex-wrap:wrap!important;gap:4px!important}
+  .status-history{order:20;flex:1 0 100%;min-width:0!important;max-width:none!important;align-items:flex-start!important;font-size:11px;line-height:1.15}
+  .status-history .status-line{text-align:left!important}
+  .status-history .status-line:nth-child(n+2){display:none}
+
+  .app.playmode>main{display:block!important}
+  .player{min-height:0!important;padding:5px!important;border-right:0!important;border-bottom:2px solid #bbb!important}
+  .phead{gap:4px!important;margin-bottom:5px!important;align-items:center}
+  .phead h2{font-size:13px;margin-right:2px}
+  .phead>button{font-size:12px;padding:5px 6px;min-height:34px}
+  .orderbadge2{padding:4px 6px;min-width:40px}
+  .turnres{flex:1 0 100%;margin-left:0!important;gap:2px 3px!important;font-size:11px;line-height:1.2}
+  .turnres input{width:38px!important;min-width:38px;padding:2px!important;font-size:12px}
+  .turnres input[id^="counter"]{width:30px!important;min-width:30px!important;max-width:30px!important;flex:0 0 30px!important}
+  .counterbtn{min-width:30px!important;min-height:30px!important;padding:0!important}
+
+  .counts{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:4px!important;align-items:stretch!important}
+  .counts .count,.counts .auxcount{min-width:0!important;width:auto!important;min-height:46px!important;height:auto!important;padding:3px 4px!important;margin:0!important}
+  .counts .count b,.counts .auxcount b{font-size:11px!important;white-space:nowrap}
+  .counts .count span{font-size:17px!important}
+  .counts .life{grid-column:span 2!important;min-width:0!important;margin-left:0!important;padding:3px!important}
+  .counts .auxcount + .life{margin-left:0!important}
+  .lifevalue{font-size:19px!important;min-width:30px!important}
+  .lifebtn{width:34px!important;height:38px!important;font-size:21px!important}
+  .endturn{grid-column:span 2!important;min-width:0!important;width:100%!important;min-height:46px!important;height:auto!important;flex:none!important}
+
+  :root{--play-card-w:76px;--play-image-w:54px}
+  .zone{padding:4px!important;min-height:70px}
+  .zone-title{font-size:10px;margin-bottom:3px}
+  .fieldzone .cardrow,.exzone .cardrow,.handzone .cardrow{gap:5px!important;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .stats{font-size:12px;gap:2px;padding-top:17px!important;padding-bottom:19px!important;margin-top:2px!important}
+  .stat{min-width:27px!important}
+  .value,.slash{padding:2px 4px!important}
+  .stat .sb{display:block!important;min-width:28px;width:28px;height:20px;line-height:18px;padding:0!important;font-size:10px}
+  .mobile-move-btn{display:block;width:100%;margin-top:3px;padding:3px 2px!important;min-height:30px!important;font-size:11px!important;touch-action:manipulation}
+
+  .player .deckviewer,.player .pileviewer{position:fixed!important;z-index:60;left:6px!important;right:6px!important;top:78px!important;width:auto!important;height:auto!important;max-height:calc(100dvh - 90px)!important;overflow:auto!important;padding:7px!important}
+  .player .deckviewer .cardrow,.player .pileviewer .cardrow{grid-template-columns:repeat(auto-fill,minmax(78px,1fr))!important;gap:8px!important}
+  .player .deckviewer .card,.player .pileviewer .card{width:78px!important;min-width:78px!important;max-width:88px!important;margin:auto}
+
+  .dialog{width:min(96vw,720px)!important;max-height:92dvh!important;padding:10px!important}
+  .dialog h2{font-size:16px;padding-right:50px}
+  .choices{gap:7px!important}
+  .choice{width:82px!important;font-size:11px}
+  .evoactions{gap:7px!important}
+  .evoactions button{min-width:125px!important;min-height:44px!important;font-size:13px!important}
+
+  .app.deckmode>.left.deck-register{grid-template-columns:1fr!important;padding:6px!important;gap:6px!important}
+  .deck-column>.box{margin-bottom:6px!important}
+  .deckname-row{gap:5px}
+  .io{flex-wrap:wrap!important}
+  .io button{flex:1 1 42%!important;min-height:40px}
+  .decklog-row{display:grid!important;grid-template-columns:auto minmax(0,1fr) auto;gap:5px!important}
+  .decklog-code{width:100%;min-width:0}
+  .deckdrop .thumb,.deckdrop .thumb img{width:58px!important}
+  .drophelp{font-size:10px!important}
+}
+
+@media(max-width:480px){
+  header button{font-size:11px;padding:4px 5px}
+  .phead>button{font-size:11px;padding:4px 5px}
+  .turnres{font-size:10px}
+  .counts{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+  .counts .life{grid-column:span 2!important}
+  .endturn{grid-column:span 1!important}
+  :root{--play-card-w:66px;--play-image-w:47px}
+  .mobile-move-grid{grid-template-columns:1fr 1fr}
+  .player .deckviewer .cardrow,.player .pileviewer .cardrow{grid-template-columns:repeat(4,minmax(0,1fr))!important}
+  .player .deckviewer .card,.player .pileviewer .card{width:70px!important;min-width:0!important;max-width:76px!important}
+}
+
+
+/* v45 DECK LOG簡易トークン: 画像を持たず、文字だけで識別する。 */
+.text-token-face{display:flex;align-items:center;justify-content:center;text-align:center;font-weight:800;line-height:1.25;background:#f5f5f5;border:2px solid #888;border-radius:6px;aspect-ratio:459/641;padding:5px;overflow:hidden;word-break:break-all}
+.card .visual>.text-token-face.main{width:100%;min-height:70px}
+.fieldzone .visual>.text-token-face.main,.exzone .visual>.text-token-face.main{width:71.6%;height:auto;min-height:0}
+.thumb-text-token{width:48px;aspect-ratio:459/641;display:flex;align-items:center;justify-content:center;text-align:center;font-size:10px;font-weight:700;background:#f5f5f5;border:1px solid #999;border-radius:3px;padding:2px}
+.modal-text-token{width:120px;margin:auto}
+
+/* ==========================================================================
+   v47 smartphone tabs / fixed play field / touch drag / mulligan motion
+   ========================================================================== */
+.mobile-player-tab{display:none}
+.touch-drag-ghost{position:fixed!important;z-index:12000!important;pointer-events:none!important;opacity:.88;transform:translate(-50%,-50%) scale(1.04);filter:drop-shadow(0 6px 10px #0005);margin:0!important}
+.touch-drag-source{opacity:.28!important}
+.touch-drop-target{outline:3px solid #4d91e8!important;background:#eef6ff!important}
+.touch-tab-target{box-shadow:0 0 0 3px #8eb9ef inset!important}
+.mulligan-out{transition:transform 600ms cubic-bezier(.3,.05,.5,1),opacity 600ms ease!important;transform:translateY(42px)!important;opacity:0!important}
+@media(max-width:1000px){
+  html,body{height:100%;overscroll-behavior:none}
+  body{overflow:hidden!important}
+  header{position:fixed!important;left:0;right:0;top:0;z-index:100;height:auto;max-height:96px;overflow:hidden}
+  #playTabBtn{display:none!important}
+  .mobile-player-tab{display:inline-flex!important;align-items:center;justify-content:center;min-width:48px;font-weight:800}
+  .app{position:fixed!important;left:0;right:0;bottom:0;top:52px;min-height:0!important;overflow:hidden!important}
+  .app.deckmode{overflow:auto!important;-webkit-overflow-scrolling:touch}
+  .app.playmode>main{height:100%!important;overflow:hidden!important}
+  .app.playmode .player{height:100%!important;overflow:hidden!important;display:flex!important;flex-direction:column!important}
+  .app.playmode .player.mobile-player-hidden{display:none!important}
+  .app.playmode .player.mobile-player-active{display:flex!important}
+  .app.playmode .phead{flex:0 0 auto;max-height:104px;overflow-y:auto;scrollbar-width:thin}
+  .app.playmode .counts{flex:0 0 auto}
+  .app.playmode .zone-wrap{flex:1 1 auto!important;min-height:0!important;display:grid!important;grid-template-rows:minmax(0,1.35fr) minmax(0,.9fr) minmax(0,1fr)!important;overflow:hidden!important}
+  .app.playmode .zone{min-height:0!important;overflow:hidden!important}
+  .app.playmode .fieldzone .cardrow,.app.playmode .exzone .cardrow,.app.playmode .handzone .cardrow{height:calc(100% - 16px);min-height:0!important;overflow-x:auto!important;overflow-y:hidden!important;align-items:flex-start}
+  .app.playmode .fieldzone .cardrow{display:grid!important;grid-template-columns:repeat(5,minmax(58px,1fr))!important}
+  .mobile-move-btn{display:none!important}
+  .card,.visual{touch-action:none}
+}
+@media(max-width:1000px) and (orientation:landscape){
+  header{max-height:48px}
+  .app{top:48px!important}
+  .app.playmode .phead{max-height:78px}
+  .counts .count,.counts .auxcount{min-height:38px!important}
+  .endturn{min-height:38px!important}
+  :root{--play-card-w:70px;--play-image-w:50px}
+}
+
+
+
+/* ==========================================================================
+   v48 smartphone UI tuning
+   - 操作ボタンを1列に収める
+   - 山札/墓場/消滅/トークン/エボルヴを1列5分割
+   - スマホではカードP/Tの±ボタンを廃止し数値直接入力
+   - 場/EXを同じ固定高さ、手札は2段分の高さ
+   ========================================================================== */
+.stat-value-input{font:inherit;text-align:center;min-width:32px;width:32px;color:inherit}
+.stat-value-input::-webkit-outer-spin-button,.stat-value-input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.stat-value-input{appearance:textfield;-moz-appearance:textfield}
+
+@media(max-width:1000px){
+  /* ヘッダー */
+  header{max-height:86px!important;overflow:hidden!important}
+  .app{top:86px!important}
+  .status-history{font-size:10px!important}
+
+  /* P1/P2上部。先攻/後攻 + 6操作ボタンを横1列、数値設定を次の1列へ。 */
+  .app.playmode .phead{
+    display:grid!important;
+    grid-template-columns:repeat(7,minmax(0,1fr))!important;
+    gap:3px!important;
+    max-height:none!important;
+    overflow:visible!important;
+    margin-bottom:4px!important;
+  }
+  .app.playmode .phead h2{display:none!important}
+  .app.playmode .phead>.orderbadge2{grid-column:auto!important;min-width:0!important;width:100%!important;padding:4px 1px!important;font-size:10px!important;text-align:center}
+  .app.playmode .phead>button{
+    min-width:0!important;width:100%!important;min-height:30px!important;height:30px!important;
+    padding:2px 1px!important;font-size:9px!important;line-height:1.05!important;white-space:nowrap!important
+  }
+  .app.playmode .turnres{grid-column:1/-1!important;display:flex!important;flex-wrap:nowrap!important;gap:2px!important;align-items:center!important;font-size:9px!important;white-space:nowrap!important;overflow:hidden!important}
+  .app.playmode .turnres input{width:31px!important;min-width:31px!important;height:26px!important;padding:1px!important;font-size:11px!important}
+  .app.playmode .turnres input[id^="counter"]{width:27px!important;min-width:27px!important;max-width:27px!important;flex-basis:27px!important}
+  .app.playmode .counterbtn{min-width:26px!important;width:26px!important;height:26px!important;min-height:26px!important;font-size:15px!important}
+
+  /* 5つの領域ボタンを必ず1列にする。ライフ/ターン開始はその下。 */
+  .app.playmode .counts{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:3px!important;margin-bottom:4px!important}
+  .app.playmode .counts>.count:not(.life),.app.playmode .counts>.auxcount{
+    min-width:0!important;width:100%!important;min-height:40px!important;height:40px!important;padding:2px 1px!important;overflow:hidden!important
+  }
+  .app.playmode .counts>.count:not(.life) b,.app.playmode .counts>.auxcount b{font-size:9px!important;white-space:nowrap!important}
+  .app.playmode .counts>.count:not(.life) span,.app.playmode .counts>.auxcount span{font-size:12px!important;white-space:nowrap!important}
+  .app.playmode .counts>.life{grid-column:1/span 3!important;min-height:40px!important;height:40px!important;padding:2px 4px!important}
+  .app.playmode .counts>.endturn{grid-column:4/span 2!important;min-height:40px!important;height:40px!important;font-size:13px!important}
+  .app.playmode .lifectl{height:26px!important}
+  .app.playmode .lifebtn{width:30px!important;height:28px!important;min-height:28px!important;font-size:18px!important}
+  .app.playmode .lifevalue{font-size:18px!important}
+
+  /* カードステータスは直接入力。スマホでは+1/-1を出さない。 */
+  .app.playmode .stats{padding:0!important;margin:2px 0 0!important;gap:2px!important;height:27px!important;line-height:25px!important}
+  .app.playmode .stats .sb{display:none!important}
+  .app.playmode .stats .stat{min-width:31px!important;height:27px!important}
+  .app.playmode .stats .value{height:27px!important;width:31px!important;min-width:31px!important;padding:1px 2px!important;font-size:12px!important}
+  .app.playmode .stats .slash{height:27px!important;line-height:21px!important;padding:2px 4px!important;font-size:12px!important}
+
+  /* 盤面高さ。場とEXは同じ、手札はカード2段分。 */
+  :root{--play-card-w:64px;--play-image-w:46px}
+  .app.playmode .zone-wrap{
+    flex:0 0 auto!important;
+    display:grid!important;
+    grid-template-rows:118px 118px 158px!important;
+    height:394px!important;
+    min-height:394px!important;
+    overflow:hidden!important
+  }
+  .app.playmode .fieldzone,.app.playmode .exzone{height:118px!important;min-height:118px!important;max-height:118px!important;padding:3px!important}
+  .app.playmode .handzone{height:158px!important;min-height:158px!important;max-height:158px!important;padding:3px!important}
+  .app.playmode .fieldzone .cardrow,.app.playmode .exzone .cardrow{height:98px!important;min-height:98px!important;overflow-x:auto!important;overflow-y:hidden!important;align-items:flex-start!important}
+  .app.playmode .handzone .cardrow{
+    height:138px!important;min-height:138px!important;display:grid!important;
+    grid-template-rows:repeat(2,64px)!important;grid-auto-flow:column!important;grid-auto-columns:64px!important;
+    gap:5px!important;overflow-x:auto!important;overflow-y:hidden!important;align-content:start!important
+  }
+  .app.playmode .zone-title{height:16px!important;line-height:14px!important;margin:0!important;font-size:10px!important}
+
+  /* 旧「移動」ボタンは全端末で生成しない。残存CSSも念のため非表示。 */
+  .mobile-move-btn{display:none!important}
+}
+
+@media(max-width:1000px) and (orientation:landscape){
+  header{max-height:48px!important}
+  .app{top:48px!important}
+  .app.playmode .zone-wrap{grid-template-rows:92px 92px 116px!important;height:300px!important;min-height:300px!important}
+  .app.playmode .fieldzone,.app.playmode .exzone{height:92px!important;min-height:92px!important;max-height:92px!important}
+  .app.playmode .handzone{height:116px!important;min-height:116px!important;max-height:116px!important}
+  .app.playmode .fieldzone .cardrow,.app.playmode .exzone .cardrow{height:72px!important}
+  .app.playmode .handzone .cardrow{height:96px!important;grid-template-rows:repeat(2,44px)!important;grid-auto-columns:58px!important}
+  :root{--play-card-w:58px;--play-image-w:41px}
+}
+
+
+/* ==========================================================================
+   v49 smartphone usability tuning
+   - P/T表示をカード幅内に収める
+   - Turn/PP/EP/SEP/Counterを3列×2段、スマホのみ±ボタン付き
+   - 手札は1段目5枚を埋めてから2段目へ
+   - 山札/墓場/消滅一覧はターン開始の下に2列・縦スクロール表示
+   ========================================================================== */
+.resitem{display:inline-flex;align-items:center;gap:2px;white-space:nowrap}
+.resctl{display:inline-flex;align-items:center;gap:2px}
+.mobile-res-btn{display:none}
+
+@media(max-width:1000px){
+  /* 盤面カードのP/Tをカード幅内に収め、隣カードへ重ならないようにする。 */
+  .app.playmode .stats{width:100%!important;max-width:100%!important;gap:1px!important;justify-content:center!important;overflow:hidden!important}
+  .app.playmode .stats .stat{min-width:22px!important;width:22px!important;max-width:22px!important}
+  .app.playmode .stats .value,.app.playmode .stats .stat-value-input{
+    width:22px!important;min-width:22px!important;max-width:22px!important;height:24px!important;
+    padding:0!important;font-size:10px!important;line-height:22px!important;border-radius:3px!important
+  }
+  .app.playmode .stats .slash{width:11px!important;min-width:11px!important;max-width:11px!important;height:24px!important;padding:0!important;font-size:10px!important;line-height:22px!important;border-radius:3px!important}
+
+  /* 資源値: 1段目 Turn/最大PP/残りPP、2段目 EP/SEP/Counter。 */
+  .app.playmode .turnres{
+    grid-column:1/-1!important;display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;
+    gap:3px!important;overflow:visible!important;white-space:normal!important;width:100%!important
+  }
+  .app.playmode .turnres .resitem{display:grid!important;grid-template-rows:auto 26px!important;gap:1px!important;min-width:0!important;text-align:center!important}
+  .app.playmode .turnres .reslabel{font-size:9px!important;line-height:10px!important;overflow:hidden!important;white-space:nowrap!important}
+  .app.playmode .turnres .resctl{display:grid!important;grid-template-columns:24px minmax(28px,1fr) 24px!important;gap:2px!important;min-width:0!important}
+  .app.playmode .turnres input,.app.playmode .turnres input[id^="counter"]{
+    width:100%!important;min-width:0!important;max-width:none!important;height:26px!important;padding:0!important;font-size:11px!important;text-align:center!important
+  }
+  .app.playmode .mobile-res-btn,.app.playmode .counterbtn{
+    display:inline-flex!important;align-items:center!important;justify-content:center!important;
+    width:24px!important;min-width:24px!important;max-width:24px!important;height:26px!important;min-height:26px!important;padding:0!important;font-size:15px!important;line-height:1!important
+  }
+  .app.playmode .turnres .resitem:has(input:disabled) .mobile-res-btn{opacity:.4;pointer-events:none}
+
+  /* 手札は横方向に5枚で1段。6枚目から2段目へ送る。 */
+  .app.playmode .handzone .cardrow{
+    display:grid!important;grid-template-columns:repeat(5,64px)!important;grid-template-rows:repeat(2,64px)!important;
+    grid-auto-flow:row!important;grid-auto-columns:64px!important;grid-auto-rows:64px!important;
+    gap:5px!important;overflow-x:auto!important;overflow-y:hidden!important;align-content:start!important;justify-content:start!important
+  }
+  .app.playmode .handzone .card{width:64px!important;min-width:64px!important;max-width:64px!important;flex-basis:64px!important}
+
+  /* 展開した山札/墓場/消滅は、盤面右側だけを覆う2列パネルにする。
+     場の左側は露出するため、一覧から場へそのままドラッグ可能。 */
+  .app.playmode .player{position:relative!important}
+  .app.playmode .player .deckviewer,.app.playmode .player .pileviewer{
+    position:absolute!important;z-index:70!important;left:auto!important;right:4px!important;top:0;
+    width:154px!important;max-width:44vw!important;height:auto!important;max-height:300px!important;
+    margin:0!important;padding:4px!important;overflow-y:auto!important;overflow-x:hidden!important;
+    -webkit-overflow-scrolling:touch!important;overscroll-behavior:contain!important;background:#fff!important;
+    box-shadow:0 3px 12px #0004!important
+  }
+  .app.playmode .player .deckviewer .cardrow,.app.playmode .player .pileviewer .cardrow{
+    display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-auto-rows:auto!important;
+    gap:4px!important;height:auto!important;max-height:none!important;overflow:visible!important;align-items:start!important
+  }
+  .app.playmode .player .deckviewer .card,.app.playmode .player .pileviewer .card{
+    width:64px!important;min-width:0!important;max-width:64px!important;margin:0 auto!important
+  }
+  .app.playmode .player .deckviewer .visual,.app.playmode .player .pileviewer .visual{
+    width:64px!important;height:64px!important
+  }
+  .app.playmode .player .deckviewer .visual img.main,.app.playmode .player .pileviewer .visual img.main{width:46px!important}
+}
+
+@media(max-width:1000px) and (orientation:landscape){
+  .app.playmode .handzone .cardrow{grid-template-columns:repeat(5,58px)!important;grid-template-rows:repeat(2,44px)!important;grid-auto-columns:58px!important;grid-auto-rows:44px!important}
+  .app.playmode .handzone .card{width:58px!important;min-width:58px!important;max-width:58px!important;flex-basis:58px!important}
+  .app.playmode .player .deckviewer,.app.playmode .player .pileviewer{width:142px!important;max-height:210px!important}
+  .app.playmode .player .deckviewer .card,.app.playmode .player .pileviewer .card{width:58px!important;max-width:58px!important}
+  .app.playmode .player .deckviewer .visual,.app.playmode .player .pileviewer .visual{width:58px!important;height:58px!important}
+  .app.playmode .player .deckviewer .visual img.main,.app.playmode .player .pileviewer .visual img.main{width:41px!important}
+}
+
+
+
+/* ==========================================================================
+   v51 smartphone spacing / operation buttons / pile scroll gutter
+   ========================================================================== */
+@media(max-width:1000px){
+  /* 固定ヘッダー直下の不要な空白を詰める。 */
+  header{padding:4px 6px!important;gap:4px!important;align-content:flex-start!important;max-height:78px!important}
+  header h1{display:none!important}
+  header .status{flex:1 0 100%!important;margin:0!important;min-height:14px!important;line-height:14px!important}
+  .app{top:78px!important}
+  .app.playmode .player{padding-top:2px!important}
+  .app.playmode .phead{margin-top:0!important;padding-top:0!important}
+
+  /* 先攻/後攻は単独1段。6操作ボタンは3列×2段で大きくする。 */
+  .app.playmode .phead{grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important}
+  .app.playmode .phead>.orderbadge2{grid-column:1/-1!important;width:100%!important;min-height:28px!important;padding:5px 4px!important;font-size:12px!important}
+  .app.playmode .phead>button{height:38px!important;min-height:38px!important;padding:4px 2px!important;font-size:11px!important;font-weight:700!important}
+  .app.playmode .turnres{grid-column:1/-1!important}
+
+  /* 山札/墓場/消滅の展開パネルは右端から画面中央付近まで広げる。
+     カードは従来どおり2列・同サイズで、左側をスクロール専用余白にする。 */
+  .app.playmode .player .deckviewer,.app.playmode .player .pileviewer{
+    right:4px!important;left:auto!important;width:250px!important;max-width:64vw!important;
+    max-height:330px!important;padding:4px 4px 6px 54px!important;
+    overflow-y:auto!important;overflow-x:hidden!important;touch-action:pan-y!important;
+    -webkit-overflow-scrolling:touch!important;overscroll-behavior:contain!important
+  }
+  .app.playmode .player .deckviewer .cardrow,.app.playmode .player .pileviewer .cardrow{
+    grid-template-columns:repeat(2,64px)!important;justify-content:end!important;gap:4px!important
+  }
+
+  /* 山札・墓場・消滅は見出しの下に少し余白を取り、
+     墓場のタイプ内訳と1枚目のカード画像が重ならないようにする。 */
+  .app.playmode .player .deckviewer .cardrow,
+  .app.playmode .player .pileviewer[data-zone="grave"] .cardrow,
+  .app.playmode .player .pileviewer[data-zone="banish"] .cardrow{
+    margin-top:18px!important;
+  }
+
+  /* 左の余白はカードを掴まず上下スワイプできるスクロールレーン。 */
+  .app.playmode .player .deckviewer::before,.app.playmode .player .pileviewer::before{
+    content:'↕';position:sticky;float:left;left:-42px;top:28px;width:34px;height:64px;
+    margin-left:-46px;display:flex;align-items:center;justify-content:center;
+    color:#999;font-size:22px;pointer-events:none
+  }
+}
+@media(max-width:1000px) and (orientation:landscape){
+  header{max-height:46px!important;padding:2px 5px!important}
+  .app{top:46px!important}
+  .app.playmode .player .deckviewer,.app.playmode .player .pileviewer{width:220px!important;max-width:58vw!important;padding-left:48px!important;max-height:220px!important}
+  .app.playmode .player .deckviewer .cardrow,.app.playmode .player .pileviewer .cardrow{grid-template-columns:repeat(2,58px)!important}
+}
+
+/* v53 DECK LOG 読込履歴 --------------------------------------------------- */
+.decklog-history-box{grid-column:1/-1;margin:0 0 12px;padding:10px}
+.decklog-history-head{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:7px}
+.decklog-history-head h2{margin:0;font-size:13px}
+.decklog-history-note{font-size:11px;color:#777}
+.decklog-history-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+.decklog-history-empty{grid-column:1/-1;color:#777;font-size:12px;padding:8px 2px}
+.decklog-history-row{display:grid;grid-template-columns:minmax(82px,110px) minmax(0,1fr) auto;gap:6px;align-items:center;border:1px solid #ddd;border-radius:6px;padding:5px;background:#fff}
+.decklog-history-code{width:100%;min-width:0;border:1px solid #bbb;border-radius:5px;padding:5px 6px;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-weight:700;background:#fafafa;color:#222}
+.decklog-history-name{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:12px}
+.decklog-history-copy{padding:5px 8px;white-space:nowrap}
+@media(max-width:1000px){
+ .decklog-history-list{grid-template-columns:1fr}
+ .decklog-history-row{grid-template-columns:minmax(88px,112px) minmax(0,1fr) auto}
+ .decklog-history-box{margin:0 8px 10px}
+}
 </style></head><body>
 
 <!-- =========================================================================
@@ -494,11 +875,13 @@ main,.app{
 
 <!-- [画面上部] タブ、初期化、先攻後攻入替、ステータスメッセージ -->
 <header>
-<h1>SVE 一人回しツール v41 モーション実験版</h1>
+<h1>SVE 一人回しツール v53 スマホ一覧余白調整版</h1>
 <button id="deckTabBtn" class="tabbtn" onclick="setTab('deck')">デッキ登録</button>
 <button id="playTabBtn" class="tabbtn active" onclick="setTab('play')">対戦画面</button>
+<button id="mobileP1TabBtn" class="tabbtn mobile-player-tab active" onclick="setMobilePlayer(0)">P1</button>
+<button id="mobileP2TabBtn" class="tabbtn mobile-player-tab" onclick="setMobilePlayer(1)">P2</button>
 <span id="battleHeaderControls">
-<button onclick="resetBoth()">初期化</button><button onclick="swapFirstSecondAndReset()">先攻後攻入替＋初期化</button><button onclick="rollDice()">サイコロ</button><span id="diceResult" style="margin-left:6px;font-weight:700">-</span>
+<button onclick="resetBoth()">初期化</button><button onclick="swapFirstSecondAndReset()">先後入替</button><button onclick="rollDice()">サイコロ</button><span id="diceResult" style="margin-left:6px;font-weight:700">-</span>
 </span>
 <div id="status" class="status status-history">
   <div class="status-line">準備完了</div>
@@ -507,21 +890,25 @@ main,.app{
 <div id="app" class="app playmode"><!-- [デッキ登録] P1/P2 のメイン・エボルヴ・トークン登録領域 -->
 <aside class="left deck-register">
   <section class="deck-column">
-    <div class="box"><h2>P1 デッキ入出力</h2><div class="deckname-row"><label for="deckName0">デッキ名</label><input id="deckName0" class="deckname" type="text" placeholder="未入力時は従来のファイル名"></div><div class="io"><button onclick="exportPlayer(0)">TXT出力</button><button onclick="file0.click()">TXT読込</button><button class="clear-deck-btn" onclick="clearRegisteredDeck(0)">登録情報を一括削除</button><input id="file0" type="file" hidden accept=".txt,.json" onchange="importPlayer(event,0)"></div></div>
+    <div class="box"><h2>P1 デッキ入出力</h2><div class="deckname-row"><label for="deckName0">デッキ名</label><input id="deckName0" class="deckname" type="text" placeholder="未入力時は従来のファイル名"></div><div class="decklog-row"><label for="decklog0">DECK LOG</label><input id="decklog0" class="decklog-code" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" placeholder="例: 9QBYC" onkeydown="if(event.key==='Enter')importDeckLog(0)"><button class="decklog-read-btn" onclick="importDeckLog(0)">コード読込</button></div><div class="decklog-note">DECK LOGのデッキコードを入力すると、メイン/エボルヴを自動登録します。</div><div class="io"><button onclick="exportPlayer(0)">TXT出力</button><button onclick="file0.click()">TXT読込</button><button class="clear-deck-btn" onclick="clearRegisteredDeck(0)">登録情報を一括削除</button><input id="file0" type="file" hidden accept=".txt,.json" onchange="importPlayer(event,0)"></div></div>
     <div class="box deckdrop" data-player="0" data-kind="normal"><h2>P1 メイン <span id="mc0"></span></h2><div class="drophelp">カード画像をここへドラッグ＆ドロップ</div><div id="ml0" class="list"></div></div>
     <div class="box deckdrop" data-player="0" data-kind="evolve"><h2>P1 エボルヴ <span id="ec0"></span></h2><div class="drophelp">カード画像をここへドラッグ＆ドロップ</div><div id="el0" class="list"></div></div>
     <div class="box deckdrop" data-player="0" data-kind="token"><h2>P1 トークン <span id="tc0"></span></h2><div class="drophelp">カード画像をここへドラッグ＆ドロップ</div><div id="tl0" class="list"></div></div>
   </section>
   <section class="deck-column">
-    <div class="box"><h2>P2 デッキ入出力</h2><div class="deckname-row"><label for="deckName1">デッキ名</label><input id="deckName1" class="deckname" type="text" placeholder="未入力時は従来のファイル名"></div><div class="io"><button onclick="exportPlayer(1)">TXT出力</button><button onclick="file1.click()">TXT読込</button><button class="clear-deck-btn" onclick="clearRegisteredDeck(1)">登録情報を一括削除</button><input id="file1" type="file" hidden accept=".txt,.json" onchange="importPlayer(event,1)"></div></div>
+    <div class="box"><h2>P2 デッキ入出力</h2><div class="deckname-row"><label for="deckName1">デッキ名</label><input id="deckName1" class="deckname" type="text" placeholder="未入力時は従来のファイル名"></div><div class="decklog-row"><label for="decklog1">DECK LOG</label><input id="decklog1" class="decklog-code" type="text" inputmode="text" autocomplete="off" autocapitalize="characters" placeholder="例: 9QBYC" onkeydown="if(event.key==='Enter')importDeckLog(1)"><button class="decklog-read-btn" onclick="importDeckLog(1)">コード読込</button></div><div class="decklog-note">DECK LOGのデッキコードを入力すると、メイン/エボルヴを自動登録します。</div><div class="io"><button onclick="exportPlayer(1)">TXT出力</button><button onclick="file1.click()">TXT読込</button><button class="clear-deck-btn" onclick="clearRegisteredDeck(1)">登録情報を一括削除</button><input id="file1" type="file" hidden accept=".txt,.json" onchange="importPlayer(event,1)"></div></div>
     <div class="box deckdrop" data-player="1" data-kind="normal"><h2>P2 メイン <span id="mc1"></span></h2><div class="drophelp">カード画像をここへドラッグ＆ドロップ</div><div id="ml1" class="list"></div></div>
     <div class="box deckdrop" data-player="1" data-kind="evolve"><h2>P2 エボルヴ <span id="ec1"></span></h2><div class="drophelp">カード画像をここへドラッグ＆ドロップ</div><div id="el1" class="list"></div></div>
     <div class="box deckdrop" data-player="1" data-kind="token"><h2>P2 トークン <span id="tc1"></span></h2><div class="drophelp">カード画像をここへドラッグ＆ドロップ</div><div id="tl1" class="list"></div></div>
   </section>
+  <div class="box decklog-history-box">
+    <div class="decklog-history-head"><h2>DECK LOG 読込履歴</h2><span class="decklog-history-note">最新20件（同じコードは最新位置へ更新）</span></div>
+    <div id="decklogHistoryList" class="decklog-history-list"><div class="decklog-history-empty">まだ読込履歴はありません。</div></div>
+  </div>
 </aside>
 <!-- [対戦画面] 左がPlayer 1、右がPlayer 2 -->
 <main>
-<section class="player"><div class="phead"><h2>プレイヤー1</h2><span id="order0" class="orderbadge2"></span><button onclick="draw(0)">ドロー</button><button onclick="shuffle(0)">シャッフル</button><button onclick="topToBottom(0)">ボトムへ</button><button onclick="topToGrave(0)">墓地へ</button><button onclick="mulligan(0)">マリガン</button><button onclick="chooseField(0)">エボルヴ</button><div class="res turnres">ターン<input id="turn0" type="number" value="0" onchange="setTurn(0,this.value)">最大PP<input id="maxpp0" type="number" value="0" onchange="G.p[0].maxpp=+this.value">残りPP<input id="pp0" type="number" value="0" onchange="G.p[0].pp=+this.value">EP<input id="ep0" type="number" value="0" onchange="G.p[0].ep=+this.value">SEP<input id="sep0" type="number" value="1" onchange="G.p[0].sep=+this.value">カウンター<span class="counterctl"><button type="button" class="counterbtn" onclick="changeCounter(0,-1)">−</button><input id="counter0" class="counterinput" type="number" value="0" onchange="G.p[0].counter=+this.value"><button type="button" class="counterbtn" onclick="changeCounter(0,1)">＋</button></span></div></div><div class="counts">
+<section class="player" data-player-panel="0"><div class="phead"><h2>プレイヤー1</h2><span id="order0" class="orderbadge2"></span><button onclick="draw(0)">ドロー</button><button onclick="shuffle(0)">シャッフル</button><button onclick="topToBottom(0)">ボトムへ</button><button onclick="topToGrave(0)">墓地へ</button><button onclick="mulligan(0)">マリガン</button><button onclick="chooseField(0)">エボルヴ</button><div class="res turnres"><div class="resitem"><span class="reslabel">ターン</span><span class="resctl"><button type="button" class="mobile-res-btn" onclick="changeResource(0,'turn',-1)">−</button><input id="turn0" type="number" value="0" onchange="setTurn(0,this.value)"><button type="button" class="mobile-res-btn" onclick="changeResource(0,'turn',1)">＋</button></span></div><div class="resitem"><span class="reslabel">最大PP</span><span class="resctl"><button type="button" class="mobile-res-btn" onclick="changeResource(0,'maxpp',-1)">−</button><input id="maxpp0" type="number" value="0" onchange="G.p[0].maxpp=+this.value"><button type="button" class="mobile-res-btn" onclick="changeResource(0,'maxpp',1)">＋</button></span></div><div class="resitem"><span class="reslabel">残りPP</span><span class="resctl"><button type="button" class="mobile-res-btn" onclick="changeResource(0,'pp',-1)">−</button><input id="pp0" type="number" value="0" onchange="G.p[0].pp=+this.value"><button type="button" class="mobile-res-btn" onclick="changeResource(0,'pp',1)">＋</button></span></div><div class="resitem"><span class="reslabel">EP</span><span class="resctl"><button type="button" class="mobile-res-btn" onclick="changeResource(0,'ep',-1)">−</button><input id="ep0" type="number" value="0" onchange="G.p[0].ep=+this.value"><button type="button" class="mobile-res-btn" onclick="changeResource(0,'ep',1)">＋</button></span></div><div class="resitem"><span class="reslabel">SEP</span><span class="resctl"><button type="button" class="mobile-res-btn" onclick="changeResource(0,'sep',-1)">−</button><input id="sep0" type="number" value="1" onchange="G.p[0].sep=+this.value"><button type="button" class="mobile-res-btn" onclick="changeResource(0,'sep',1)">＋</button></span></div><div class="resitem"><span class="reslabel">カウンター</span><span class="resctl counterctl"><button type="button" class="counterbtn" onclick="changeCounter(0,-1)">−</button><input id="counter0" class="counterinput" type="number" value="0" onchange="G.p[0].counter=+this.value"><button type="button" class="counterbtn" onclick="changeCounter(0,1)">＋</button></span></div></div></div><div class="counts">
 <div class="count decktoggle dropcount" data-p="0" data-zone="deck" onclick="toggleDeck(0)"><b>山札 ▼</b><span id="d0">0</span></div>
 <div class="count decktoggle dropcount" data-p="0" data-zone="grave" onclick="togglePile(0,'grave')"><b>墓場 ▼</b><span id="g0">0</span></div>
 <div class="count decktoggle dropcount" data-p="0" data-zone="banish" onclick="togglePile(0,'banish')"><b>消滅 ▼</b><span id="b0">0</span></div>
@@ -535,7 +922,7 @@ main,.app{
 <div class="zone exzone" data-p="0" data-zone="ex"><div class="zone-title">EXエリア <span>最大5枚</span></div><div id="ex0" class="cardrow"></div></div>
 <div class="zone handzone" data-p="0" data-zone="hand"><div class="zone-title">手札</div><div id="hand0" class="cardrow"></div></div>
 </div></section>
-<section class="player"><div class="phead"><h2>プレイヤー2</h2><span id="order1" class="orderbadge2"></span><button onclick="draw(1)">ドロー</button><button onclick="shuffle(1)">シャッフル</button><button onclick="topToBottom(1)">ボトムへ</button><button onclick="topToGrave(1)">墓地へ</button><button onclick="mulligan(1)">マリガン</button><button onclick="chooseField(1)">エボルヴ</button><div class="res turnres">ターン<input id="turn1" type="number" value="0" onchange="setTurn(1,this.value)">最大PP<input id="maxpp1" type="number" value="0" onchange="G.p[1].maxpp=+this.value">残りPP<input id="pp1" type="number" value="0" onchange="G.p[1].pp=+this.value">EP<input id="ep1" type="number" value="0" onchange="G.p[1].ep=+this.value">SEP<input id="sep1" type="number" value="1" onchange="G.p[1].sep=+this.value">カウンター<span class="counterctl"><button type="button" class="counterbtn" onclick="changeCounter(1,-1)">−</button><input id="counter1" class="counterinput" type="number" value="0" onchange="G.p[1].counter=+this.value"><button type="button" class="counterbtn" onclick="changeCounter(1,1)">＋</button></span></div></div><div class="counts">
+<section class="player" data-player-panel="1"><div class="phead"><h2>プレイヤー2</h2><span id="order1" class="orderbadge2"></span><button onclick="draw(1)">ドロー</button><button onclick="shuffle(1)">シャッフル</button><button onclick="topToBottom(1)">ボトムへ</button><button onclick="topToGrave(1)">墓地へ</button><button onclick="mulligan(1)">マリガン</button><button onclick="chooseField(1)">エボルヴ</button><div class="res turnres"><div class="resitem"><span class="reslabel">ターン</span><span class="resctl"><button type="button" class="mobile-res-btn" onclick="changeResource(1,'turn',-1)">−</button><input id="turn1" type="number" value="0" onchange="setTurn(1,this.value)"><button type="button" class="mobile-res-btn" onclick="changeResource(1,'turn',1)">＋</button></span></div><div class="resitem"><span class="reslabel">最大PP</span><span class="resctl"><button type="button" class="mobile-res-btn" onclick="changeResource(1,'maxpp',-1)">−</button><input id="maxpp1" type="number" value="0" onchange="G.p[1].maxpp=+this.value"><button type="button" class="mobile-res-btn" onclick="changeResource(1,'maxpp',1)">＋</button></span></div><div class="resitem"><span class="reslabel">残りPP</span><span class="resctl"><button type="button" class="mobile-res-btn" onclick="changeResource(1,'pp',-1)">−</button><input id="pp1" type="number" value="0" onchange="G.p[1].pp=+this.value"><button type="button" class="mobile-res-btn" onclick="changeResource(1,'pp',1)">＋</button></span></div><div class="resitem"><span class="reslabel">EP</span><span class="resctl"><button type="button" class="mobile-res-btn" onclick="changeResource(1,'ep',-1)">−</button><input id="ep1" type="number" value="0" onchange="G.p[1].ep=+this.value"><button type="button" class="mobile-res-btn" onclick="changeResource(1,'ep',1)">＋</button></span></div><div class="resitem"><span class="reslabel">SEP</span><span class="resctl"><button type="button" class="mobile-res-btn" onclick="changeResource(1,'sep',-1)">−</button><input id="sep1" type="number" value="1" onchange="G.p[1].sep=+this.value"><button type="button" class="mobile-res-btn" onclick="changeResource(1,'sep',1)">＋</button></span></div><div class="resitem"><span class="reslabel">カウンター</span><span class="resctl counterctl"><button type="button" class="counterbtn" onclick="changeCounter(1,-1)">−</button><input id="counter1" class="counterinput" type="number" value="0" onchange="G.p[1].counter=+this.value"><button type="button" class="counterbtn" onclick="changeCounter(1,1)">＋</button></span></div></div></div><div class="counts">
 <div class="count decktoggle dropcount" data-p="1" data-zone="deck" onclick="toggleDeck(1)"><b>山札 ▼</b><span id="d1">0</span></div>
 <div class="count decktoggle dropcount" data-p="1" data-zone="grave" onclick="togglePile(1,'grave')"><b>墓場 ▼</b><span id="g1">0</span></div>
 <div class="count decktoggle dropcount" data-p="1" data-zone="banish" onclick="togglePile(1,'banish')"><b>消滅 ▼</b><span id="b1">0</span></div>
@@ -596,6 +983,262 @@ function P(){return{
  * image=画像URL、type=normal/evolve/token、count=登録枚数。
  */
 function dc(image,type,count=1){return{id:'d'+uid(),image,type,count:+count||1,used:false}}
+/** DECK LOG読込時だけ使う画像なし簡易トークン。 */
+function textToken(label){
+ return{id:'d'+uid(),image:'',type:'token',count:1,used:false,tokenLabel:String(label),statsRead:true}
+}
+/** カード画像がない簡易トークンは、画像の代わりに文字カードを表示する。 */
+function cardFace(c,extraClass='main'){
+ if(c&&c.tokenLabel&&!c.image)return '<div class="'+extraClass+' text-token-face">'+esc(c.tokenLabel)+'</div>';
+ return '<img class="'+extraClass+'" src="'+esc(c?.image||'')+'">';
+}
+
+// ---------------------------------------------------------------------------
+// [00.5] 最後に登録したデッキの自動保存 / 自動復元（v52）
+// ---------------------------------------------------------------------------
+// 保存先は各利用者のブラウザ内 IndexedDB。
+// GitHub / Cloudflare 側へデッキ内容を送信・保存しない。
+// 「ページを閉じた瞬間」ではなく登録内容が変わるたびに保存するため、
+// スマホOSがタブを破棄した場合でも次回アクセス時に復元できる。
+const LAST_DECK_DB_NAME='sve-solo-tool';
+const LAST_DECK_DB_VERSION=1;
+const LAST_DECK_STORE='state';
+const LAST_DECK_KEY='last-registered-decks-v1';
+const DECKLOG_HISTORY_KEY='decklog-import-history-v1';
+const DECKLOG_HISTORY_MAX=20;
+let deckLogHistory=[];
+let lastDeckSaveTimer=null;
+let restoringLastDeck=false;
+
+function openLastDeckDB(){
+ return new Promise((resolve,reject)=>{
+  if(!('indexedDB' in window)){reject(new Error('IndexedDB unsupported'));return}
+  const req=indexedDB.open(LAST_DECK_DB_NAME,LAST_DECK_DB_VERSION);
+  req.onupgradeneeded=()=>{
+   const db=req.result;
+   if(!db.objectStoreNames.contains(LAST_DECK_STORE))db.createObjectStore(LAST_DECK_STORE);
+  };
+  req.onsuccess=()=>resolve(req.result);
+  req.onerror=()=>reject(req.error||new Error('IndexedDB open failed'));
+ });
+}
+
+// ---------------------------------------------------------------------------
+// [00.6] DECK LOG 読込履歴（v53）
+// ---------------------------------------------------------------------------
+// DECK LOGから正常に登録できたコードだけを履歴化する。
+// 同じコードを再度読んだ場合は重複させず最新位置へ移動し、デッキ名を更新する。
+// 最大件数を超えた古い履歴は自動的に末尾から削除する。
+function renderDeckLogHistory(){
+ const list=$('decklogHistoryList');
+ if(!list)return;
+ list.innerHTML='';
+ if(!deckLogHistory.length){
+  const empty=document.createElement('div');
+  empty.className='decklog-history-empty';
+  empty.textContent='まだ読込履歴はありません。';
+  list.appendChild(empty);
+  return;
+ }
+ for(const item of deckLogHistory){
+  const row=document.createElement('div');
+  row.className='decklog-history-row';
+
+  // readonly inputにして、PCでは通常の選択コピー、スマホでは長押しコピーも可能にする。
+  const code=document.createElement('input');
+  code.className='decklog-history-code';
+  code.type='text';
+  code.readOnly=true;
+  code.value=String(item.code||'');
+  code.setAttribute('aria-label','DECK LOGコード '+code.value);
+  code.addEventListener('focus',()=>code.select());
+
+  const name=document.createElement('div');
+  name.className='decklog-history-name';
+  name.textContent=String(item.name||'（デッキ名なし）');
+  name.title=name.textContent;
+
+  const copy=document.createElement('button');
+  copy.type='button';
+  copy.className='decklog-history-copy';
+  copy.textContent='コピー';
+  copy.addEventListener('click',()=>copyDeckLogHistoryCode(code.value,copy));
+
+  row.append(code,name,copy);
+  list.appendChild(row);
+ }
+}
+
+async function copyDeckLogHistoryCode(code,button){
+ let ok=false;
+ try{
+  if(navigator.clipboard&&window.isSecureContext){
+   await navigator.clipboard.writeText(code);
+   ok=true;
+  }
+ }catch(e){}
+ if(!ok){
+  try{
+   const ta=document.createElement('textarea');
+   ta.value=code;ta.style.position='fixed';ta.style.opacity='0';
+   document.body.appendChild(ta);ta.select();
+   ok=document.execCommand('copy');ta.remove();
+  }catch(e){}
+ }
+ if(button){
+  const old=button.textContent;
+  button.textContent=ok?'コピー済':'選択';
+  setTimeout(()=>button.textContent=old,900);
+ }
+ if(!ok)status('デッキコード '+code+' を選択してコピーしてください');
+}
+
+async function saveDeckLogHistory(){
+ try{
+  const db=await openLastDeckDB();
+  await new Promise((resolve,reject)=>{
+   const tx=db.transaction(LAST_DECK_STORE,'readwrite');
+   tx.objectStore(LAST_DECK_STORE).put(deckLogHistory,DECKLOG_HISTORY_KEY);
+   tx.oncomplete=resolve;
+   tx.onerror=()=>reject(tx.error||new Error('History write failed'));
+   tx.onabort=()=>reject(tx.error||new Error('History write aborted'));
+  });
+  db.close();
+ }catch(e){console.warn('DECK LOG history save failed:',e)}
+}
+
+async function loadDeckLogHistory(){
+ try{
+  const db=await openLastDeckDB();
+  const raw=await new Promise((resolve,reject)=>{
+   const tx=db.transaction(LAST_DECK_STORE,'readonly');
+   const req=tx.objectStore(LAST_DECK_STORE).get(DECKLOG_HISTORY_KEY);
+   req.onsuccess=()=>resolve(req.result||[]);
+   req.onerror=()=>reject(req.error||new Error('History read failed'));
+  });
+  db.close();
+  deckLogHistory=(Array.isArray(raw)?raw:[])
+   .filter(x=>x&&x.code)
+   .map(x=>({code:normalizeDeckLogCode(x.code),name:String(x.name||''),savedAt:Number(x.savedAt)||0}))
+   .filter(x=>x.code)
+   .slice(0,DECKLOG_HISTORY_MAX);
+ }catch(e){
+  console.warn('DECK LOG history restore failed:',e);
+  deckLogHistory=[];
+ }
+ renderDeckLogHistory();
+}
+
+function addDeckLogHistory(code,name){
+ code=normalizeDeckLogCode(code);
+ if(!code)return;
+ const cleanName=String(name||'').trim();
+ deckLogHistory=deckLogHistory.filter(x=>x.code!==code);
+ deckLogHistory.unshift({code,name:cleanName,savedAt:Date.now()});
+ if(deckLogHistory.length>DECKLOG_HISTORY_MAX)deckLogHistory.length=DECKLOG_HISTORY_MAX;
+ renderDeckLogHistory();
+ saveDeckLogHistory();
+}
+
+function deckRegistrationSnapshot(){
+ const packCard=c=>({
+  image:String(c?.image||''),
+  type:String(c?.type||''),
+  count:Number(c?.count)||1,
+  tokenLabel:c?.tokenLabel?String(c.tokenLabel):'',
+  statsRead:!!c?.statsRead
+ });
+ return {
+  version:1,
+  savedAt:Date.now(),
+  players:[0,1].map(p=>({
+   deckName:$('deckName'+p)?.value||'',
+   deckLogCode:$('decklog'+p)?.value||'',
+   main:G.decks[p].main.map(packCard),
+   evolve:G.decks[p].evolve.map(packCard),
+   token:G.decks[p].token.map(packCard)
+  }))
+ };
+}
+
+async function saveLastRegisteredDecks(){
+ if(restoringLastDeck)return;
+ try{
+  const db=await openLastDeckDB();
+  const data=deckRegistrationSnapshot();
+  await new Promise((resolve,reject)=>{
+   const tx=db.transaction(LAST_DECK_STORE,'readwrite');
+   tx.objectStore(LAST_DECK_STORE).put(data,LAST_DECK_KEY);
+   tx.oncomplete=resolve;
+   tx.onerror=()=>reject(tx.error||new Error('IndexedDB write failed'));
+   tx.onabort=()=>reject(tx.error||new Error('IndexedDB write aborted'));
+  });
+  db.close();
+ }catch(e){
+  // 保存不能でも一人回し本体は止めない。
+  console.warn('Last deck autosave failed:',e);
+ }
+}
+
+function scheduleLastDeckSave(){
+ if(restoringLastDeck)return;
+ clearTimeout(lastDeckSaveTimer);
+ lastDeckSaveTimer=setTimeout(saveLastRegisteredDecks,250);
+}
+
+async function loadLastRegisteredDecks(){
+ try{
+  const db=await openLastDeckDB();
+  const data=await new Promise((resolve,reject)=>{
+   const tx=db.transaction(LAST_DECK_STORE,'readonly');
+   const req=tx.objectStore(LAST_DECK_STORE).get(LAST_DECK_KEY);
+   req.onsuccess=()=>resolve(req.result||null);
+   req.onerror=()=>reject(req.error||new Error('IndexedDB read failed'));
+  });
+  db.close();
+  if(!data||!Array.isArray(data.players))return false;
+
+  const rebuild=(raw,kind)=>{
+   if(!raw||typeof raw!=='object')return null;
+   if(raw.tokenLabel&&!raw.image){
+    const c=textToken(raw.tokenLabel);
+    c.count=Math.max(1,Number(raw.count)||1);
+    return c;
+   }
+   if(!raw.image)return null;
+   return dc(String(raw.image),kind,Math.max(1,Number(raw.count)||1));
+  };
+
+  restoringLastDeck=true;
+  for(let p=0;p<2;p++){
+   const sp=data.players[p];
+   if(!sp)continue;
+   G.decks[p].main=(Array.isArray(sp.main)?sp.main:[]).map(x=>rebuild(x,'normal')).filter(Boolean);
+   G.decks[p].evolve=(Array.isArray(sp.evolve)?sp.evolve:[]).map(x=>rebuild(x,'evolve')).filter(Boolean);
+   G.decks[p].token=(Array.isArray(sp.token)?sp.token:[]).map(x=>rebuild(x,'token')).filter(Boolean);
+   if($('deckName'+p))$('deckName'+p).value=String(sp.deckName||'');
+   if($('decklog'+p))$('decklog'+p).value=String(sp.deckLogCode||'');
+  }
+  // 対戦途中の盤面は復元せず、最後の登録デッキから新しい対戦状態を作る。
+  resetPlayer(0);
+  resetPlayer(1);
+  render();
+  return data.players.some(sp=>sp&&((sp.main?.length||0)||(sp.evolve?.length||0)||(sp.token?.length||0)));
+ }catch(e){
+  console.warn('Last deck restore failed:',e);
+  return false;
+ }finally{
+  restoringLastDeck=false;
+ }
+}
+
+function setupLastDeckAutosaveInputs(){
+ for(let p=0;p<2;p++){
+  $('deckName'+p)?.addEventListener('input',scheduleLastDeckSave);
+  $('decklog'+p)?.addEventListener('change',scheduleLastDeckSave);
+ }
+}
+
 /**
  * 登録カードから「対戦中の実カード」を1枚生成する。
  * 同じカードが複数枚あっても識別できるよう、新しい runtime ID を付ける。
@@ -639,13 +1282,35 @@ function status(message){
 /**
  * 「デッキ登録」と「対戦画面」の表示を切り替える。
  */
+let mobileActivePlayer=0;
+function isMobileLayout(){return window.matchMedia&&window.matchMedia('(max-width:1000px)').matches}
+function syncMobilePlayerPanels(){
+ const mobile=isMobileLayout();
+ document.querySelectorAll('[data-player-panel]').forEach(el=>{
+   if(!mobile){el.classList.remove('mobile-player-hidden','mobile-player-active');return}
+   const p=Number(el.dataset.playerPanel);
+   el.classList.toggle('mobile-player-hidden',p!==mobileActivePlayer);
+   el.classList.toggle('mobile-player-active',p===mobileActivePlayer);
+ });
+ const b0=$('mobileP1TabBtn'),b1=$('mobileP2TabBtn');
+ if(b0)b0.classList.toggle('active',mobileActivePlayer===0);
+ if(b1)b1.classList.toggle('active',mobileActivePlayer===1);
+}
+function setMobilePlayer(p){
+ mobileActivePlayer=p===1?1:0;
+ setTab('play');
+ syncMobilePlayerPanels();
+ closeSideLists();
+}
 function setTab(t){
  const deck=t==='deck';
  $('app').className='app '+(deck?'deckmode':'playmode');
  $('deckTabBtn').classList.toggle('active',deck);
  $('playTabBtn').classList.toggle('active',!deck);
  $('battleHeaderControls').style.display=deck?'none':'inline-flex';
+ syncMobilePlayerPanels();
 }
+window.addEventListener('resize',syncMobilePlayerPanels);
 
 
 // ---------------------------------------------------------------------------
@@ -661,7 +1326,7 @@ function render(){for(let p=0;p<2;p++){let x=G.p[p];$('d'+p).textContent=x.deck.
  * デッキ登録画面のカード一覧を描画する。
  * 左クリック=枚数+1、右クリック=枚数-1。
  */
-function list(id,a){$(id).innerHTML='';a.forEach(c=>{let d=document.createElement('div');d.className='thumb '+(c.used?'used':'');d.title='左クリック:+1 / 右クリック:-1';d.innerHTML='<img src="'+esc(c.image)+'"><span class="n">'+c.count+'</span>';d.onclick=e=>{e.preventDefault();c.count++;render()};d.oncontextmenu=e=>{e.preventDefault();c.count--;if(c.count<=0){let i=a.indexOf(c);if(i>=0)a.splice(i,1)}render()};$(id).appendChild(d)})}
+function list(id,a){$(id).innerHTML='';a.forEach(c=>{let d=document.createElement('div');d.className='thumb '+(c.used?'used':'');d.title='左クリック:+1 / 右クリック:-1';d.innerHTML=(c.tokenLabel&&!c.image?'<div class="thumb-text-token">'+esc(c.tokenLabel)+'</div>':'<img src="'+esc(c.image)+'">')+'<span class="n">'+c.count+'</span>';d.onclick=e=>{e.preventDefault();c.count++;render();scheduleLastDeckSave()};d.oncontextmenu=e=>{e.preventDefault();c.count--;if(c.count<=0){let i=a.indexOf(c);if(i>=0)a.splice(i,1)}render();scheduleLastDeckSave()};$(id).appendChild(d)})}
 
 /**
  * 手札・場・EX・墓場・消滅などのカードを画面へ描画する。
@@ -684,7 +1349,7 @@ function cards(id,a,p,z){
   }
   const canAct=(z==='field'||z==='ex');
   const acted=(canAct&&c.acted)?' acted':'';
-  d.innerHTML='<div class="visual'+acted+'"><img class="main" src="'+esc(c.image)+'">'+e+'</div>'+((z==='field'||z==='ex')?stat(c,p):'');
+  d.innerHTML='<div class="visual'+acted+'">'+cardFace(c,'main')+e+'</div>'+((z==='field'||z==='ex')?stat(c,p):'');
   const visual=d.querySelector('.visual');
   if(canAct){
     visual.style.cursor='pointer';
@@ -692,6 +1357,7 @@ function cards(id,a,p,z){
   }
   d.ondragstart=ev=>{G.drag={p,zone:z,id:c.id};d.classList.add('dragging');ev.dataTransfer.effectAllowed='move'};
   d.ondragend=()=>{d.classList.remove('dragging');document.querySelectorAll('.zone.drag,.dropcount.drag').forEach(x=>x.classList.remove('drag'))};
+  enableTouchDrag(d,p,z,c.id);
   $(id).appendChild(d)
  })
 }
@@ -709,6 +1375,7 @@ function deckCards(p){
   d.onclick=()=>{G.sel={p,zone:'deck',id:c.id};render()};
   d.ondragstart=ev=>{G.drag={p,zone:'deck',id:c.id};d.classList.add('dragging');ev.dataTransfer.effectAllowed='move'};
   d.ondragend=()=>{d.classList.remove('dragging');document.querySelectorAll('.zone.drag,.dropcount.drag').forEach(x=>x.classList.remove('drag'))};
+  enableTouchDrag(d,p,'deck',c.id);
   el.appendChild(d)
  })
 }
@@ -731,12 +1398,33 @@ function closeSideLists(){
  * - 閉じている山札を押す → 他の一覧を閉じて山札を開く
  * - 開いている山札を押す → 山札を閉じる
  */
+function positionMobileSideViewer(v,p){
+ if(!v||!isMobileLayout())return;
+ const player=document.querySelector('.player[data-player-panel="'+p+'"]');
+ const end=player?.querySelector('.endturn');
+ if(!player||!end)return;
+ const pr=player.getBoundingClientRect(),er=end.getBoundingClientRect();
+ const top=Math.max(0,er.bottom-pr.top+4);
+ v.style.top=top+'px';
+ const room=Math.max(120,pr.bottom-er.bottom-10);
+ v.style.maxHeight=Math.min(300,room)+'px';
+}
+
+function positionOpenMobileSideViewers(){
+ if(!isMobileLayout())return;
+ document.querySelectorAll('.player .deckviewer.show,.player .pileviewer.show').forEach(v=>{
+   const p=Number(v.closest('.player')?.dataset.playerPanel||0);
+   positionMobileSideViewer(v,p);
+ });
+}
+
 function toggleDeck(p){
  const v=$('deckview'+p);
  const wasOpen=v.classList.contains('show');
  closeSideLists();
  if(!wasOpen)v.classList.add('show');
  render();
+ if(!wasOpen)requestAnimationFrame(()=>positionMobileSideViewer(v,p));
 }
 
 /**
@@ -752,6 +1440,7 @@ function togglePile(p,z){
  closeSideLists();
  if(!wasOpen)v.classList.add('show');
  render();
+ if(!wasOpen)requestAnimationFrame(()=>positionMobileSideViewer(v,p));
 }
 
 /**
@@ -761,11 +1450,11 @@ function togglePile(p,z){
 function stat(c,p){
  return '<div class="stats">'
  +'<div class="stat"><button class="sb up" onclick="event.stopPropagation();chg('+p+',\''+c.id+'\',\'power\',1)">+1</button>'
- +'<div id="sv-'+p+'-'+c.id+'-power" class="value">'+c.power+'</div>'
+ +'<input id="sv-'+p+'-'+c.id+'-power" class="value stat-value-input" type="number" inputmode="numeric" value="'+c.power+'" onclick="event.stopPropagation()" onpointerdown="event.stopPropagation()" onchange="setStatValue('+p+',\''+c.id+'\',\'power\',this.value)">'
  +'<button class="sb down" onclick="event.stopPropagation();chg('+p+',\''+c.id+'\',\'power\',-1)">-1</button></div>'
  +'<div class="slash" onclick="event.stopPropagation();zero('+p+',\''+c.id+'\')">/</div>'
  +'<div class="stat"><button class="sb up" onclick="event.stopPropagation();chg('+p+',\''+c.id+'\',\'toughness\',1)">+1</button>'
- +'<div id="sv-'+p+'-'+c.id+'-toughness" class="value">'+c.toughness+'</div>'
+ +'<input id="sv-'+p+'-'+c.id+'-toughness" class="value stat-value-input" type="number" inputmode="numeric" value="'+c.toughness+'" onclick="event.stopPropagation()" onpointerdown="event.stopPropagation()" onchange="setStatValue('+p+',\''+c.id+'\',\'toughness\',this.value)">'
  +'<button class="sb down" onclick="event.stopPropagation();chg('+p+',\''+c.id+'\',\'toughness\',-1)">-1</button></div>'
  +'</div>'
 }
@@ -790,7 +1479,20 @@ function chg(p,i,k,n){
  c[k]=(+c[k]||0)+n;
  const mk=k==='power'?'powerMod':'toughnessMod';
  c[mk]=(+c[mk]||0)+n;
- let el=$('sv-'+p+'-'+i+'-'+k);if(el)el.textContent=c[k]
+ let el=$('sv-'+p+'-'+i+'-'+k);if(el){if('value' in el)el.value=c[k];else el.textContent=c[k]}
+}
+
+/** 数値欄へ直接入力したPower/Toughnessを反映する。 */
+function setStatValue(p,i,k,v){
+ let c=statCard(p,i);if(!c)return;
+ const nv=Number(v);
+ if(!Number.isFinite(nv)){render();return}
+ const printedKey=k==='power'?'printedPower':'printedToughness';
+ const base=Number.isFinite(Number(c[printedKey]))?Number(c[printedKey]):0;
+ c[k]=nv;
+ const mk=k==='power'?'powerMod':'toughnessMod';
+ c[mk]=nv-base;
+ let el=$('sv-'+p+'-'+i+'-'+k);if(el&&'value' in el)el.value=nv;
 }
 
 /**
@@ -800,9 +1502,137 @@ function zero(p,i){
  let c=statCard(p,i);if(!c)return;
  c.power=c.toughness=0;c.powerMod=c.toughnessMod=0;
  let pe=$('sv-'+p+'-'+i+'-power'),te=$('sv-'+p+'-'+i+'-toughness');
- if(pe)pe.textContent='0';if(te)te.textContent='0'
+ if(pe){if('value' in pe)pe.value='0';else pe.textContent='0'}
+ if(te){if('value' in te)te.value='0';else te.textContent='0'}
 }
 
+
+// ---------------------------------------------------------------------------
+// [02.8] スマホ用カード移動メニュー
+// ---------------------------------------------------------------------------
+/**
+ * PCでは従来どおりドラッグ＆ドロップを使用する。
+ * スマホではHTML5 Drag & Dropが端末/ブラウザ依存になりやすいため、
+ * CSSでスマホ時だけ表示される「移動」ボタンをカードへ追加する。
+ */
+function addMobileMoveButton(cardEl,p,z,id,label='移動'){
+ const b=document.createElement('button');
+ b.type='button';b.className='mobile-move-btn';b.textContent=label;
+ b.onclick=e=>{e.preventDefault();e.stopPropagation();openMobileMoveMenu(p,z,id)};
+ cardEl.appendChild(b);
+}
+
+/** スマホ用の移動先選択モーダルを開く。 */
+function openMobileMoveMenu(p,z,id){
+ G.mobileMove={p,z,id};
+ let c=null;
+ if(z==='tokenlist')c=G.decks[p].token.find(x=>x.id===id);
+ else c=G.p[p][z]?.find(x=>x.id===id);
+ if(!c)return;
+ const same=[
+   ['field','場'],['ex','EX'],['hand','手札'],['grave','墓場'],['banish','消滅'],['deck','山札上']
+ ].filter(([to])=>to!==z);
+ let buttons=same.map(([to,label])=>'<button onclick="mobileMoveTo('+p+',\''+to+'\')">P'+(p+1)+' '+label+'</button>');
+ // 相手側へは従来ルールどおり「場 / EX」のみ移動可能。
+ const other=1-p;
+ buttons.push('<button onclick="mobileMoveTo('+other+',\'field\')">P'+(other+1)+' 場</button>');
+ buttons.push('<button onclick="mobileMoveTo('+other+',\'ex\')">P'+(other+1)+' EX</button>');
+ if(z==='tokenlist'){
+   buttons=[
+    '<button onclick="mobileMoveTo('+p+',\'field\')">P'+(p+1)+' 場</button>',
+    '<button onclick="mobileMoveTo('+p+',\'ex\')">P'+(p+1)+' EX</button>',
+    '<button onclick="mobileMoveTo('+other+',\'field\')">P'+(other+1)+' 場</button>',
+    '<button onclick="mobileMoveTo('+other+',\'ex\')">P'+(other+1)+' EX</button>'
+   ];
+ }
+ openModal('カードの移動先を選択',
+   '<div class="mobile-move-card">'+(c.tokenLabel&&!c.image?'<div class="text-token-face modal-text-token">'+esc(c.tokenLabel)+'</div>':'<img src="'+esc(c.image)+'">')+'</div>'+ 
+   '<div class="mobile-move-grid">'+buttons.join('')+'</div>');
+}
+
+/** 選択した移動先へ既存の moveCard() を使って移動する。 */
+async function mobileMoveTo(targetP,to){
+ const m=G.mobileMove;if(!m)return;
+ closeModal();
+ await moveCard(m.p,m.z,m.id,to,targetP);
+ G.mobileMove=null;
+}
+
+// ---------------------------------------------------------------------------
+// [02.9] スマホ用 Pointer Drag
+// ---------------------------------------------------------------------------
+// スマホではHTML5 Drag & Dropの代わりにPointer Eventsを使う。
+// 指を約8px以上動かした時だけドラッグ開始と判定するため、通常タップはAct/Stand等へ残す。
+let TOUCH_DRAG=null;
+function enableTouchDrag(el,p,z,id){
+ el.addEventListener('pointerdown',ev=>{
+   if(!isMobileLayout()||ev.pointerType==='mouse'||ev.button!==0)return;
+   if(ev.target.closest('button,input'))return;
+   TOUCH_DRAG={p,z,id,startX:ev.clientX,startY:ev.clientY,x:ev.clientX,y:ev.clientY,active:false,ghost:null,over:null,tabTimer:null,tabTarget:null,pointerId:ev.pointerId,sourceEl:el};
+   try{el.setPointerCapture(ev.pointerId)}catch(_){}
+ },{passive:true});
+ el.addEventListener('pointermove',ev=>{
+   const d=TOUCH_DRAG;if(!d||d.pointerId!==ev.pointerId)return;
+   d.x=ev.clientX;d.y=ev.clientY;
+   if(!d.active&&Math.hypot(d.x-d.startX,d.y-d.startY)<8)return;
+   if(!d.active){
+     d.active=true;
+     d.sourceEl.classList.add('touch-drag-source');
+     const r=d.sourceEl.getBoundingClientRect();
+     const g=d.sourceEl.cloneNode(true);
+     g.querySelectorAll('.mobile-move-btn').forEach(b=>b.remove());
+     g.classList.add('touch-drag-ghost');
+     g.style.width=r.width+'px';g.style.height=r.height+'px';
+     document.body.appendChild(g);d.ghost=g;
+   }
+   ev.preventDefault();
+   positionTouchGhost(d);
+   updateTouchDropTarget(d);
+ },{passive:false});
+ const finish=async ev=>{
+   const d=TOUCH_DRAG;if(!d||d.pointerId!==ev.pointerId)return;
+   TOUCH_DRAG=null;
+   clearTimeout(d.tabTimer);
+   d.sourceEl.classList.remove('touch-drag-source');
+   d.ghost?.remove();
+   document.querySelectorAll('.touch-drop-target,.touch-tab-target').forEach(x=>x.classList.remove('touch-drop-target','touch-tab-target'));
+   if(!d.active)return;
+   ev.preventDefault();ev.stopPropagation();
+   const target=document.elementFromPoint(ev.clientX,ev.clientY)?.closest('.zone,.dropcount');
+   if(!target)return;
+   const to=target.dataset.zone,targetP=Number(target.dataset.p);
+   if(!to||!Number.isInteger(targetP))return;
+   await moveCard(d.p,d.z,d.id,to,targetP);
+ };
+ el.addEventListener('pointerup',finish,{passive:false});
+ el.addEventListener('pointercancel',finish,{passive:false});
+}
+function positionTouchGhost(d){
+ if(!d.ghost)return;
+ d.ghost.style.left=d.x+'px';d.ghost.style.top=d.y+'px';
+}
+function updateTouchDropTarget(d){
+ document.querySelectorAll('.touch-drop-target').forEach(x=>x.classList.remove('touch-drop-target'));
+ const hit=document.elementFromPoint(d.x,d.y);
+ const zone=hit?.closest('.zone,.dropcount');
+ if(zone){
+   const targetP=Number(zone.dataset.p),to=zone.dataset.zone;
+   if(Number.isInteger(targetP)&&to&&(targetP===d.p||to==='field'||to==='ex'))zone.classList.add('touch-drop-target');
+ }
+ // P1/P2タブ上に約450ms保持すると、ドラッグを継続したまま相手画面へ切替。
+ const tab=hit?.closest('.mobile-player-tab');
+ const target=tab?.id==='mobileP1TabBtn'?0:tab?.id==='mobileP2TabBtn'?1:null;
+ if(target!==null&&target!==mobileActivePlayer){
+   tab.classList.add('touch-tab-target');
+   if(d.tabTarget!==target){
+     clearTimeout(d.tabTimer);d.tabTarget=target;
+     d.tabTimer=setTimeout(()=>{mobileActivePlayer=target;syncMobilePlayerPanels();d.tabTarget=null},450);
+   }
+ }else{
+   clearTimeout(d.tabTimer);d.tabTimer=null;d.tabTarget=null;
+   document.querySelectorAll('.touch-tab-target').forEach(x=>x.classList.remove('touch-tab-target'));
+ }
+}
 
 // ---------------------------------------------------------------------------
 // [03] カード移動 / Drag & Drop ルール
@@ -841,7 +1671,7 @@ async function moveCard(p,from,id,to,targetP=p){
    G.p[targetP][to].push(c);
    G.sel={p:targetP,zone:to,id:c.id};
    render();
-   if(!c.statsRead){await read(c);render()}
+   if(!c.statsRead&&c.image){await read(c);render()}
    status('P'+(sourceP+1)+' のトークンをP'+(targetP+1)+' '+(to==='field'?'場':'EXエリア')+'へ出しました');
    return;
  }
@@ -1448,15 +2278,47 @@ function shuffle(p){G.p[p].deck.sort(()=>Math.random()-.5);render();status('P'+(
  * 現在の手札を左から順に山札ボトムへ戻し、その後トップから4枚引く。
  * この仕様ではシャッフルは行わない。
  */
-function mulligan(p){
+async function mulligan(p){
  const pl=G.p[p];
+ // まず現在の手札を全て同時に少し下へ滑らせながら消す。
+ await animateMulliganOut(p);
  while(pl.hand.length){pl.deck.unshift(pl.hand.shift())}
- for(let i=0;i<4;i++){if(pl.deck.length)pl.hand.push(pl.deck.pop())}
+ const drawn=[];
+ for(let i=0;i<4;i++){if(pl.deck.length){const c=pl.deck.pop();pl.hand.push(c);drawn.push(c)}}
  render();
+ // 新しい4枚は、通常ドローと同じ上→下の動きを全て同時に行う。
+ await animateMulliganIn(p,drawn);
  status('P'+(p+1)+' 手札を山札の下へ戻し、4枚引きました');
-
- // 新しい4枚のOCRを待たずにバックグラウンド準備。
  prefetchHandStats(p);G.p[p].hand.forEach(c=>prefetchCardType(c,p));
+}
+function animateMulliganOut(p){
+ return new Promise(resolve=>{
+   const hand=$('hand'+p);if(!hand){resolve();return}
+   const cards=[...hand.children];if(!cards.length){resolve();return}
+   if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){resolve();return}
+   cards.forEach(card=>card.classList.add('mulligan-out'));
+   setTimeout(resolve,620);
+ });
+}
+function animateMulliganIn(p,drawn){
+ return new Promise(resolve=>{
+   const hand=$('hand'+p);if(!hand||!drawn.length){resolve();return}
+   const targets=[...hand.children].slice(-drawn.length);
+   if(!targets.length){resolve();return}
+   if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){resolve();return}
+   const ghosts=[];
+   targets.forEach((target,i)=>{
+     const rect=target.getBoundingClientRect();target.classList.add('draw-arrival-hidden');
+     const c=drawn[i];const ghost=document.createElement('div');
+     ghost.className='card smallcard draw-motion-card mulligan-in-ghost';
+     ghost.innerHTML='<div class="visual">'+cardFace(c,'main')+'</div>';
+     ghost.style.left=rect.left+'px';ghost.style.top=rect.top+'px';ghost.style.width=rect.width+'px';
+     ghost.style.opacity='0.82';ghost.style.transform='translateY(-90px) scale(.96)';
+     document.body.appendChild(ghost);ghosts.push({ghost,target});
+   });
+   requestAnimationFrame(()=>requestAnimationFrame(()=>ghosts.forEach(({ghost})=>{ghost.style.transform='translateY(0) scale(1)';ghost.style.opacity='1'})));
+   setTimeout(()=>{ghosts.forEach(({ghost,target})=>{ghost.remove();target.classList.remove('draw-arrival-hidden')});resolve()},1080);
+ });
 }
 /**
  * 先攻/後攻とターン数に応じてSEP入力欄をロック/解除する。
@@ -1477,6 +2339,19 @@ function setTurn(p,v){
  G.p[p].turn=Math.max(0,+v||0);
  $('turn'+p).value=G.p[p].turn;
  syncSepLock(p);
+}
+
+
+/**
+ * スマホ用のTurn/PP/EP/SEP増減ボタン。
+ * PCではボタン自体を非表示にし、従来どおり数値入力を使う。
+ */
+function changeResource(p,key,d){
+ const el=$(key+p);if(!el)return;
+ if(key==='sep'&&el.disabled)return;
+ if(key==='turn'){setTurn(p,(+G.p[p].turn||0)+d);return}
+ const next=Math.max(0,(+G.p[p][key]||0)+d);
+ G.p[p][key]=next;el.value=next;
 }
 
 /**
@@ -1814,13 +2689,14 @@ function renderTokens(p){
  const el=$('tokencards'+p);if(!el)return;el.innerHTML='';
  G.decks[p].token.forEach(c=>{
    let d=document.createElement('div');d.className='card smallcard tokenchoice';d.draggable=true;
-   d.innerHTML='<div class="visual"><img class="main" src="'+esc(c.image)+'"></div><div class="tokenlabel">登録 '+c.count+'</div>';
+   d.innerHTML='<div class="visual">'+cardFace(c,'main')+'</div><div class="tokenlabel">'+(c.tokenLabel?esc(c.tokenLabel)+' / ':'')+'登録 '+c.count+'</div>';
    d.ondragstart=e=>{
      G.drag={p,zone:'tokenlist',id:c.id};
      e.dataTransfer.effectAllowed='copyMove';
      try{e.dataTransfer.setData('text/x-sve-token',JSON.stringify(G.drag));e.dataTransfer.setData('text/plain','SVE_TOKEN:'+c.id)}catch(_){}
    };
    d.ondragend=()=>{setTimeout(()=>{G.drag=null},0);document.querySelectorAll('.zone.drag,.dropcount.drag').forEach(x=>x.classList.remove('drag'))};
+   enableTouchDrag(d,p,'tokenlist',c.id);
    el.appendChild(d);
  });
 }
@@ -1838,6 +2714,7 @@ function showTokens(p){
  if(!wasOpen){
    renderTokens(p);
    v.classList.add('show');
+   requestAnimationFrame(()=>positionMobileSideViewer(v,p));
  }
 }
 
@@ -2234,6 +3111,7 @@ function clearRegisteredDeck(p){
  // 古い登録内容を使った対戦状態も残さない。
  resetPlayer(p);
  render();
+ scheduleLastDeckSave();
  status('P'+(p+1)+' デッキ登録情報を一括削除しました');
 }
 
@@ -2283,6 +3161,7 @@ function addCardDirect(p,type,u){
  // エボルヴ/トークンは登録した時点から待機中OCRの対象にする。
  if(type==='evolve'||type==='token')scheduleSpecialPrefetch(p);
 
+ scheduleLastDeckSave();
  status('P'+(p+1)+' '+(type==='normal'?'メイン':type==='evolve'?'エボルヴ':'トークン')+'に1枚追加');
 }
 
@@ -2475,21 +3354,156 @@ function normalizeDeckFile(raw,p){
 }
 
 /**
- * TXTファイルを読み込み、指定プレイヤーのデッキ登録情報へ反映する。
+ * TXT文字列を指定プレイヤーのデッキ登録情報へ反映する共通処理。
+ * ファイル選択とスマホの「貼付読込」の両方から利用する。
  */
+function importPlayerText(text,p){
+ const parsed=normalizeDeckFile(JSON.parse(text),p);
+ G.decks[p].main=parsed.main.map(c=>dc(c.image,'normal',c.count));
+ G.decks[p].token=parsed.token.map(c=>dc(c.image,'token',c.count));
+ G.decks[p].evolve=parsed.evolve.map(c=>dc(c.image,'evolve',c.count));
+ scheduleLastDeckSave();
+ resetPlayer(p);
+}
+
+/** TXTファイルを読み込み、指定プレイヤーへ反映する。 */
 function importPlayer(ev,p){
  let f=ev.target.files[0];if(!f)return;let r=new FileReader();
  r.onload=()=>{
-  try{
-   const parsed=normalizeDeckFile(JSON.parse(r.result),p);
-   G.decks[p].main=parsed.main.map(c=>dc(c.image,'normal',c.count));
-   G.decks[p].token=parsed.token.map(c=>dc(c.image,'token',c.count));
-   G.decks[p].evolve=parsed.evolve.map(c=>dc(c.image,'evolve',c.count));
-   resetPlayer(p);status('P'+(p+1)+' TXT読込完了')
-  }catch(e){alert('TXT形式を読み込めませんでした')}
+  try{importPlayerText(r.result,p);status('P'+(p+1)+' TXT読込完了')}
+  catch(e){alert('TXT形式を読み込めませんでした')}
  };
  r.readAsText(f,'utf-8');ev.target.value=''
-}render();
+}
+
+// ---------------------------------------------------------------------------
+// [09.4] DECK LOG デッキコード読込
+// ---------------------------------------------------------------------------
+// DECK LOG API が返す img は例: "BP16/bp16-045.png" の相対パス。
+// Shadowverse EVOLVE公式カード画像の基準URLを前につけて登録画像URLへ変換する。
+const DECKLOG_PROXY_BASE='https://decklog-proxy.hiroshi-shoutai0164.workers.dev/?code=';
+const SVE_CARD_IMAGE_BASE='https://shadowverse-evolve.com/wordpress/wp-content/images/cardlist/';
+
+/**
+ * 「9QBYC」だけでなくDECK LOGのview URLを貼り付けた場合もコードだけ取り出す。
+ */
+function normalizeDeckLogCode(value){
+ let v=String(value||'').trim();
+ const m=v.match(/decklog\.bushiroad\.com\/view\/([A-Za-z0-9_-]+)/i);
+ if(m)v=m[1];
+ return v.replace(/[^A-Za-z0-9_-]/g,'').toUpperCase();
+}
+
+/**
+ * DECK LOGのJSONを現在の登録形式へ変換する。
+ * ユーザー確認済み仕様: type=1 はメイン、type=2 はエボルヴ。
+ * それ以外のtypeは意味を断定せず読み飛ばす。
+ */
+function applyDeckLogData(data,p,code){
+ if(!data||typeof data!=='object')throw new Error('DECK LOGのデータ形式が不正です');
+
+ // DECK LOGのレスポンスでは、メインとエボルヴが必ず同じ配列階層に
+ // 入るとは限らないため、レスポンス全体を再帰的に走査して
+ // 「card_number / img / num / type」を持つカード項目を収集する。
+ // これにより、別配列に格納されたエボルヴも取り込める。
+ const cardItems=[];
+ const seenObjects=new Set();
+ function walk(v){
+  if(!v||typeof v!=='object'||seenObjects.has(v))return;
+  seenObjects.add(v);
+  if(Array.isArray(v)){
+   for(const x of v)walk(x);
+   return;
+  }
+  if(v.card_number!=null && v.img!=null && v.num!=null && v.type!=null){
+   cardItems.push(v);
+  }
+  for(const x of Object.values(v))walk(x);
+ }
+ walk(data);
+ if(!cardItems.length)throw new Error('DECK LOGのカード一覧が見つかりません');
+
+ const main=[],evolve=[];
+ const skipped=[];
+ const merged=new Map();
+ for(const item of cardItems){
+  const count=Number(item?.num)||0;
+  const rel=String(item?.img||'').replace(/^\/+/, '');
+  const type=Number(item?.type);
+  if(count<=0||!rel)continue;
+  if(type!==1&&type!==2){skipped.push(item);continue}
+
+  // 同一カードがレスポンス内の複数箇所に重複して現れても二重登録しない。
+  const key=type+'|'+rel.toLowerCase();
+  const prev=merged.get(key);
+  if(!prev || count>prev.count)merged.set(key,{type,rel,count});
+ }
+
+ for(const {type,rel,count} of merged.values()){
+  const image=SVE_CARD_IMAGE_BASE+rel;
+  if(type===1)main.push(dc(image,'normal',count));
+  else if(type===2)evolve.push(dc(image,'evolve',count));
+ }
+
+ if(!main.length&&!evolve.length)throw new Error('メイン/エボルヴカードを取得できませんでした');
+
+ // DECK LOGにはトークン登録情報がないため、この読込経路だけ
+ // 「トークン1～4」の画像なし簡易トークンを自動登録する。
+ G.decks[p].main=main;
+ G.decks[p].evolve=evolve;
+ G.decks[p].token=['トークン1','トークン2','トークン3','トークン4'].map(textToken);
+ if(data.title&&$('deckName'+p))$('deckName'+p).value=String(data.title);
+ if($('decklog'+p))$('decklog'+p).value=code;
+ scheduleLastDeckSave();
+ resetPlayer(p);
+ render();
+ scheduleSpecialPrefetch(p);
+ const msg='P'+(p+1)+' DECK LOG '+code+' 読込完了（メイン '+total(main)+'枚 / エボルヴ '+total(evolve)+'枚 / 簡易トークン4種）';
+ status(msg+(skipped.length?' ※未確認type '+skipped.length+'件を除外':''));
+}
+
+/**
+ * DECK LOGコードからCloudflare Worker経由でデッキJSONを取得する。
+ * ブラウザからDECK LOG APIを直接呼ぶとCORSで拒否されるため、
+ * decklog-proxy WorkerがDECK LOGへのPOST通信を中継する。
+ */
+async function importDeckLog(p){
+ const input=$('decklog'+p);
+ const code=normalizeDeckLogCode(input?.value||'');
+ if(!code){alert('DECK LOGのデッキコードを入力してください。例: 9QBYC');return}
+ if(input)input.value=code;
+ const btn=input?.parentElement?.querySelector('.decklog-read-btn');
+ if(btn){btn.disabled=true;btn.textContent='読込中…'}
+ status('P'+(p+1)+' DECK LOG '+code+' を取得中…');
+ try{
+  const res=await fetch(DECKLOG_PROXY_BASE+encodeURIComponent(code),{
+   method:'GET',
+   cache:'no-store'
+  });
+  if(!res.ok){
+   const detail=await res.text().catch(()=>'');
+   throw new Error('HTTP '+res.status+(detail?' / '+detail.slice(0,160):''));
+  }
+  const data=await res.json();
+  if(data?.error)throw new Error(String(data.error));
+  applyDeckLogData(data,p,code);
+  const historyName=String(data?.title||$('deckName'+p)?.value||'').trim();
+  addDeckLogHistory(code,historyName);
+ }catch(e){
+  console.error('DECK LOG import failed:',e);
+  status('P'+(p+1)+' DECK LOG読込失敗');
+  alert('DECK LOGのデッキ読込に失敗しました。\n\n'+
+        'デッキコード: '+code+'\n'+
+        'Cloudflare Worker経由で取得しています。\n\n'+
+        '詳細: '+(e?.message||e));
+ }finally{
+  if(btn){btn.disabled=false;btn.textContent='コード読込'}
+ }
+}
+
+
+
+render();
 // ---------------------------------------------------------------------------
 // [09.5] 余白クリックでサイド一覧を閉じる
 // ---------------------------------------------------------------------------
@@ -2530,6 +3544,14 @@ document.addEventListener('click',e=>{
 // [10] 起動時の初期設定
 // ---------------------------------------------------------------------------
 // ここから下は、HTML読込完了後にイベント設定と初期描画を行う。
-setupDeckDrops();setupClosedPileDrops();setTab('play');
-status('準備完了');
+setupDeckDrops();setupClosedPileDrops();setupLastDeckAutosaveInputs();mobileActivePlayer=0;setTab('play');
+
+// IndexedDBから最後に登録していたP1/P2デッキを復元する。
+// 復元対象はデッキ登録情報だけで、盤面・手札・ライフ等の対戦途中状態は保存しない。
+(async()=>{
+ const [restored]=await Promise.all([loadLastRegisteredDecks(),loadDeckLogHistory()]);
+ status(restored?'前回の登録デッキを復元しました':'準備完了');
+})();
+
+window.addEventListener('resize',()=>requestAnimationFrame(positionOpenMobileSideViewers));
 </script></body></html>
